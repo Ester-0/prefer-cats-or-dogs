@@ -21,18 +21,19 @@
             </select>
         </label>
 
-        <h3>Me gustan más los </h3>
+        <h3 v-show="favoriteAnimal">Me gustan más los {{cats ? "gatos" : 'perros'}} </h3>
 
-        <section class="container">
-            <h3>Selecciona un tipo de animal y te mostraremos una imagen 😄 </h3>
-        </section>
-        <section class="container">
+        
+        <section v-if="cats" class="container">
             <h3>¡Gatos!</h3>
-            <img src="https://cdn2.thecatapi.com/images/MjA4MzQ4NQ.jpg" alt="">
+            <img  src="https://cdn2.thecatapi.com/images/MjA4MzQ4NQ.jpg" alt="">
         </section>
-        <section class="container">
+        <section v-else-if="dogs" class="container">
             <h3>¡Perros!</h3>
             <img src="https://cdn2.thedogapi.com/images/AwKd_0wL4.jpg" alt="">
+        </section>
+        <section v-else class="container">
+            <h3>Selecciona un tipo de animal y te mostraremos una imagen 😄 </h3>
         </section>
 
     </main>

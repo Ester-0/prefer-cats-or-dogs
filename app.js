@@ -8,8 +8,25 @@ createApp({
   setup() {
     const favoriteAnimal = ref("");
 
+    const cats = computed(() => {
+      return favoriteAnimal.value === "gatos";
+    });
+
+
+    const dogs = computed(() => {
+      return favoriteAnimal.value === "perros";
+    });
+
+
+
+
+
     return {
       favoriteAnimal,
+      cats,
+      dogs,
+
+
     };
   },
 }).mount("#app");
